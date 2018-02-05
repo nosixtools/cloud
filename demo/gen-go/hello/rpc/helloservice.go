@@ -62,7 +62,7 @@ func (p *HelloServiceClient) sendHello(name string) (err error) {
 		p.OutputProtocol = oprot
 	}
 	p.SeqId++
-	if err = oprot.WriteMessageBegin("hello", thrift.CALL, p.SeqId); err != nil {
+	if err = oprot.WriteMessageBegin("Hello", thrift.CALL, p.SeqId); err != nil {
 		return
 	}
 	args := HelloArgs{
@@ -101,7 +101,7 @@ func (p *HelloServiceClient) recvHello() (value string, err error) {
 		return
 	}
 	if p.SeqId != seqId {
-		err = thrift.NewTApplicationException(thrift.BAD_SEQUENCE_ID, "hello failed: out of sequence response")
+		err = thrift.NewTApplicationException(thrift.BAD_SEQUENCE_ID, "Hello failed: out of sequence response")
 		return
 	}
 	result := HelloResult{}
@@ -136,7 +136,7 @@ func (p *HelloServiceProcessor) ProcessorMap() map[string]thrift.TProcessorFunct
 func NewHelloServiceProcessor(handler HelloService) *HelloServiceProcessor {
 
 	self2 := &HelloServiceProcessor{handler: handler, processorMap: make(map[string]thrift.TProcessorFunction)}
-	self2.processorMap["hello"] = &helloServiceProcessorHello{handler: handler}
+	self2.processorMap["Hello"] = &helloServiceProcessorHello{handler: handler}
 	return self2
 }
 
@@ -168,7 +168,7 @@ func (p *helloServiceProcessorHello) Process(seqId int32, iprot, oprot thrift.TP
 	if err = args.Read(iprot); err != nil {
 		iprot.ReadMessageEnd()
 		x := thrift.NewTApplicationException(thrift.PROTOCOL_ERROR, err.Error())
-		oprot.WriteMessageBegin("hello", thrift.EXCEPTION, seqId)
+		oprot.WriteMessageBegin("Hello", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
 		oprot.Flush()
@@ -180,8 +180,8 @@ func (p *helloServiceProcessorHello) Process(seqId int32, iprot, oprot thrift.TP
 	var retval string
 	var err2 error
 	if retval, err2 = p.handler.Hello(args.Name); err2 != nil {
-		x := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing hello: "+err2.Error())
-		oprot.WriteMessageBegin("hello", thrift.EXCEPTION, seqId)
+		x := thrift.NewTApplicationException(thrift.INTERNAL_ERROR, "Internal error processing Hello: "+err2.Error())
+		oprot.WriteMessageBegin("Hello", thrift.EXCEPTION, seqId)
 		x.Write(oprot)
 		oprot.WriteMessageEnd()
 		oprot.Flush()
@@ -189,7 +189,7 @@ func (p *helloServiceProcessorHello) Process(seqId int32, iprot, oprot thrift.TP
 	} else {
 		result.Success = &retval
 	}
-	if err2 = oprot.WriteMessageBegin("hello", thrift.REPLY, seqId); err2 != nil {
+	if err2 = oprot.WriteMessageBegin("Hello", thrift.REPLY, seqId); err2 != nil {
 		err = err2
 	}
 	if err2 = result.Write(oprot); err == nil && err2 != nil {
@@ -262,7 +262,7 @@ func (p *HelloArgs) ReadField1(iprot thrift.TProtocol) error {
 }
 
 func (p *HelloArgs) Write(oprot thrift.TProtocol) error {
-	if err := oprot.WriteStructBegin("hello_args"); err != nil {
+	if err := oprot.WriteStructBegin("Hello_args"); err != nil {
 		return fmt.Errorf("%T write struct begin error: %s", p, err)
 	}
 	if err := p.writeField1(oprot); err != nil {
@@ -359,7 +359,7 @@ func (p *HelloResult) ReadField0(iprot thrift.TProtocol) error {
 }
 
 func (p *HelloResult) Write(oprot thrift.TProtocol) error {
-	if err := oprot.WriteStructBegin("hello_result"); err != nil {
+	if err := oprot.WriteStructBegin("Hello_result"); err != nil {
 		return fmt.Errorf("%T write struct begin error: %s", p, err)
 	}
 	if err := p.writeField0(oprot); err != nil {

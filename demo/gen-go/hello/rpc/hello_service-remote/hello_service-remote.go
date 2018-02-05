@@ -20,7 +20,7 @@ func Usage() {
 	fmt.Fprintln(os.Stderr, "Usage of ", os.Args[0], " [-h host:port] [-u url] [-f[ramed]] function [arg1 [arg2...]]:")
 	flag.PrintDefaults()
 	fmt.Fprintln(os.Stderr, "\nFunctions:")
-	fmt.Fprintln(os.Stderr, "  string hello(string name)")
+	fmt.Fprintln(os.Stderr, "  string Hello(string name)")
 	fmt.Fprintln(os.Stderr)
 	os.Exit(0)
 }
@@ -115,7 +115,7 @@ func main() {
 	}
 
 	switch cmd {
-	case "hello":
+	case "Hello":
 		if flag.NArg()-1 != 1 {
 			fmt.Fprintln(os.Stderr, "Hello requires 1 args")
 			flag.Usage()
