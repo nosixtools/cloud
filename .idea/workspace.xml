@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c974d8b-523c-402d-ae2b-e4bd4260e573" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/queue/queue.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/url/Url.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/common/zk/zk.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/Config.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/ProviderConfig.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/demo/DemoClient.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/demo/DemoServer.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/register/Register.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/Client.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/client/ThriftClient.go" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/demo/gen-go/hello/rpc/hello_service-remote/hello_service-remote.go" afterPath="$PROJECT_DIR$/demo/gen-go/hello/rpc/hello_service-remote/hello_service-remote.go" />
-      <change beforePath="$PROJECT_DIR$/demo/gen-go/hello/rpc/helloservice.go" afterPath="$PROJECT_DIR$/demo/gen-go/hello/rpc/helloservice.go" />
-      <change beforePath="$PROJECT_DIR$/demo/hello.thrift" afterPath="$PROJECT_DIR$/demo/hello.thrift" />
-      <change beforePath="$PROJECT_DIR$/server/ThriftServer.go" afterPath="$PROJECT_DIR$/server/ThriftServer.go" />
+      <change beforePath="$PROJECT_DIR$/config/ReferenceConfig.go" afterPath="$PROJECT_DIR$/config/ReferenceConfig.go" />
+      <change beforePath="$PROJECT_DIR$/demo/DemoClient.go" afterPath="$PROJECT_DIR$/demo/DemoClient.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,23 +17,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DemoServer.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/DemoServer.go">
+      <file leaf-file-name="DemoClient.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/DemoClient.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Register.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/register/Register.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="240">
+              <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
               <folding>
-                <element signature="e#18#48#0" expanded="true" />
+                <element signature="e#14#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,11 +51,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/server/Server.go" />
-        <option value="$PROJECT_DIR$/config/ReferenceConfig.go" />
         <option value="$PROJECT_DIR$/config/RegisterConfig.go" />
         <option value="$PROJECT_DIR$/config/ServiceConfig.go" />
         <option value="$PROJECT_DIR$/demo/hello.thrift" />
-        <option value="$PROJECT_DIR$/demo/DemoClient.go" />
         <option value="$PROJECT_DIR$/config/Config.go" />
         <option value="$PROJECT_DIR$/config/ProviderConfig.go" />
         <option value="$PROJECT_DIR$/common/Url.go" />
@@ -82,6 +62,10 @@
         <option value="$PROJECT_DIR$/common/queue/queue.go" />
         <option value="$PROJECT_DIR$/demo/DemoServer.go" />
         <option value="$PROJECT_DIR$/register/Register.go" />
+        <option value="$PROJECT_DIR$/client/Client.go" />
+        <option value="$PROJECT_DIR$/config/ReferenceConfig.go" />
+        <option value="$PROJECT_DIR$/client/ThriftClient.go" />
+        <option value="$PROJECT_DIR$/demo/DemoClient.go" />
       </list>
     </option>
   </component>
@@ -119,6 +103,11 @@
               <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -132,6 +121,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -175,8 +165,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Go Build.go build DemoServer.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Build.go build DemoClient.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Build.go build DemoClient.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Build.go build DemoServer.go" />
       </list>
     </recent_temporary>
   </component>
@@ -266,14 +256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/ReferenceConfig.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/RegisterConfig.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -290,60 +272,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/DemoClient.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <element signature="e#14#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/gen-go/hello/rpc/helloservice.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="135" column="5" lean-forward="false" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/hello.thrift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/go/src/reflect/type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="1397" column="5" lean-forward="false" selection-start-line="1397" selection-start-column="5" selection-end-line="1397" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/ProviderConfig.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -363,16 +295,6 @@
         <state relative-caret-position="154">
           <caret line="142" column="24" lean-forward="false" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/ThriftServer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -396,20 +318,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/DemoServer.go">
+    <entry file="file://$PROJECT_DIR$/register/Register.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#18#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/Config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/ProviderConfig.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/Client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="76" lean-forward="false" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+          <folding>
+            <element signature="e#16#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../git.apache.org/thrift.git/lib/go/thrift/http_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/gen-go/hello/rpc/helloservice.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/reflect/type.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/reflect/value.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="1152" column="43" lean-forward="true" selection-start-line="1152" selection-start-column="43" selection-end-line="1152" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/DemoServer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/Register.go">
+    <entry file="file://$PROJECT_DIR$/config/ReferenceConfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/ThriftServer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#18#48#0" expanded="true" />
+            <element signature="e#16#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/ThriftClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/DemoClient.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="e#14#94#0" expanded="true" />
           </folding>
         </state>
       </provider>
