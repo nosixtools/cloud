@@ -9,7 +9,7 @@ import (
 
 func main() {
 	configTemp := &config.Config{Host:"127.0.0.1",Port:8888,Group:"test",Version:"1.0.0", Weight:"1"}
-	referenceConfig := &config.ReferenceConfig{configTemp}
+	referenceConfig := &config.ReferenceConfig{configTemp, nil}
 	helloService := &rpc.HelloServiceClient{}
 
 	client := client.NewThriftClient(referenceConfig, helloService)

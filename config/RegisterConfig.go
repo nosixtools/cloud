@@ -1,9 +1,8 @@
 package config
 
+import "time"
+
 type RegisterConfig struct {
-	address string
-	port int
-	version string
-	group string
-	weight int
+	Address []string
+	Timeout time.Duration
 }

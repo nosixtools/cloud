@@ -1,7 +1,6 @@
 package config
 
-
-
 type ReferenceConfig struct {
-	Config *Config
+	Config         *Config
+	RegisterConfig *RegisterConfig
 }

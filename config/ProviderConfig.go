@@ -1,6 +1,7 @@
 package config
 
-
 type ProviderConfig struct {
-	Config *Config
+	Config         *Config
+	RegisterConfig *RegisterConfig
+	ServiceName	   string
 }
