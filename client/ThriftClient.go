@@ -4,9 +4,10 @@ import (
 	"cloud/config"
 	"git.apache.org/thrift.git/lib/go/thrift"
 	"reflect"
-	"strconv"
 	"time"
 	"errors"
+	"cloud/register"
+	log "code.google.com/p/log4go"
 )
 
 var (
@@ -51,9 +52,14 @@ func (tc *ThriftClient) Exec(methodName string, params ...interface{}) ([]reflec
 }
 
 func (tc *ThriftClient) createClientFactory() error {
+	register,err := register.NewRegister(tc.referenceConfig.RegisterConfig)
+	if err != nil {
+		log.Info(err.Error())
+	}
+	register.DiscoverServices(tc.referenceConfig)
 	transportFactory := thrift.NewTFramedTransportFactory(thrift.NewTTransportFactory())
 	protocolFactory := thrift.NewTBinaryProtocolFactoryDefault()
-	address := tc.referenceConfig.Config.Host + ":" + strconv.Itoa(tc.referenceConfig.Config.Port)
+	address := register.Seletor()
 	if address == "" {
 		return ErrEmptyHosts
 	}

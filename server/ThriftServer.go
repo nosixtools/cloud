@@ -5,17 +5,19 @@ import (
 	"git.apache.org/thrift.git/lib/go/thrift"
 	"strconv"
 	"fmt"
+	"cloud/register"
+	log "code.google.com/p/log4go"
 )
 
 type ThriftServer struct {
-	providerConfig config.ProviderConfig
+	providerConfig *config.ProviderConfig
 	processor thrift.TProcessor
 	server *thrift.TSimpleServer
 	hasStarted bool
 }
 
 func NewThrifthServer(config *config.ProviderConfig, processor thrift.TProcessor)  *ThriftServer  {
-	server  := &ThriftServer{providerConfig:*config, processor:processor,hasStarted:false}
+	server  := &ThriftServer{providerConfig:config, processor:processor, hasStarted:false}
 	return server
 }
 
@@ -35,9 +37,17 @@ func(ts *ThriftServer) Start() error  {
 		ts.hasStarted = true;
 		err = ts.server.Serve()
 	}(err)
-	if err != nil {
-		//register service to zk
-
+	if err == nil {
+		register, err := register.NewRegister(ts.providerConfig.RegisterConfig)
+		if err != nil {
+			log.Error(err.Error())
+			return err
+		}
+		err = register.RegisterService(ts.providerConfig)
+		if err != nil {
+			log.Error(err.Error())
+			return err
+		}
 	}
 	return err
 }
