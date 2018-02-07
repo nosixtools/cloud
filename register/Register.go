@@ -44,17 +44,23 @@ func (register *Register) RegisterService(config *config.ProviderConfig) error {
 	filePath := constant.RPC_PREFIX + constant.RPC_SEPERATE_ONE + config.ServiceName + constant.RPC_SEPERATE_ONE + config.Config.Group + constant.RPC_SEPERATE_ONE +  config.Config.Version
 	nodeInfo := config.Config.Host + constant.RPC_SEPERATE_TWO + strconv.Itoa(config.Config.Port) + constant.RPC_SEPERATE_TWO + config.Config.Weight
 	path := filePath + constant.RPC_SEPERATE_ONE + nodeInfo
-	exists, _, err := register.conn.Exists(path)
+	exists, _, err := register.conn.Exists(filePath)
 	if err != nil {
 		log.Error(err.Error())
 		return err
 	}
 	if(!exists) {
-		err := zk.Create(register.conn, path)
+		err := zk.Create(register.conn, filePath)
 		if err != nil {
 			log.Error(err.Error())
 			return err
 		}
+
+	}
+	err = zk.CreateEphemeral(register.conn, path)
+	if err != nil {
+		log.Error(err.Error())
+		return err
 	}
 	return nil
 }

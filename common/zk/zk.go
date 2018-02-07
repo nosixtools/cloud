@@ -54,6 +54,27 @@ func Create(conn *zk.Conn, fpath string) error {
 	return nil
 }
 
+// Create create zookeeper Ephemeral path, if path exists ignore error
+func CreateEphemeral(conn *zk.Conn, fpath string) error {
+	// create zk root path
+	tpath := ""
+	for _, str := range strings.Split(fpath, "/")[1:] {
+		tpath = path.Join(tpath, "/", str)
+		log.Debug("create zookeeper path: \"%s\"", tpath)
+		_, err := conn.Create(tpath, []byte(""), zk.FlagEphemeral, zk.WorldACL(zk.PermAll))
+		if err != nil {
+			if err == zk.ErrNodeExists {
+				log.Warn("zk.create(\"%s\") exists", tpath)
+			} else {
+				log.Error("zk.create(\"%s\") error(%v)", tpath, err)
+				return err
+			}
+		}
+	}
+
+	return nil
+}
+
 // RegisterTmp create a ephemeral node, and watch it, if node droped then send a SIGQUIT to self.
 func RegisterTemp(conn *zk.Conn, fpath string, data []byte) error {
 	tpath, err := conn.Create(path.Join(fpath)+"/", data, zk.FlagEphemeral|zk.FlagSequence, zk.WorldACL(zk.PermAll))
